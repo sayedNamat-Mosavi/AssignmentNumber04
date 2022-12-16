@@ -1,0 +1,6 @@
+Q01: Provide responses to the following questions about the dataset.
+1. How many instances does the dataset contain?   its = 80
+2. How many input attributes does the dataset contain? its = 7
+3. How many possible values does the output attribute have? Its 2 
+4. How many input attributes are categorical? 2 (HAIR AND COLOR)
+5. What is the class ratio (male vs female) in the dataset? 46 MALE AND 34 FAMALE (46: 34-->23: 17--> 1.35: 1)
