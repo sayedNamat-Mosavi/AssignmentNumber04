@@ -4,3 +4,50 @@ Q01: Provide responses to the following questions about the dataset.
 3. How many possible values does the output attribute have? Its 2 
 4. How many input attributes are categorical? 2 (HAIR AND COLOR)
 5. What is the class ratio (male vs female) in the dataset? 46 MALE AND 34 FAMALE (46: 34-->23: 17--> 1.35: 1)
+
+Q02 : 
+1: How many instances are incorrectly classified? it applies that classifier AGAIN on these 100 data
+2: Rerun the experiment using train/test split ratio of 80/20. Do you see any change in the results?
+Explain.
+There is no optimal split percentage.
+
+You must choose a split percentage that meets your project’s objectives with considerations that include:
+
+Computational cost in training the model.
+Computational cost in evaluating the model.
+Training set representativeness.
+Test set representativeness.
+Nevertheless, common split percentages include:
+
+Train: 80%, Test: 20%
+Train: 67%, Test: 33%
+Train: 50%, Test: 50%
+Now that we are familiar with the train-test split model evaluation procedure, let’s look at how we can use this procedure in Python.
+
+3: 
+NAME (weka.attrabuteSelection.CorelationAttrabute)
+
+NominalAttrrabute are concedred on the value by value vasis by treating each value as indicator. an everal corelation for nominal attrabute is arrived at the via 
+
+OPTIONS OUT PUT DETILED INFO --
+4: 
+...
+# split into train test sets
+train, test = train_test_split(dataset, ...)
+
+
+...
+# split into train test sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, ...)
+
+# split into train test sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33)
+
+from sklearn.datasets import make_blobs
+from sklearn.model_selection import train_test_split
+# create dataset
+X, y = make_blobs(n_samples=1000)
+# split into train test sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33)
+print(X_train.shape, X_test.shape, y_train.shape, y_test.shape)
+
