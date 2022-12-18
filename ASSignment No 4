@@ -8,22 +8,27 @@ Question 01: Provide responses to the following questions about the dataset.
 Question 02: Apply Random Forest, Support Vector Machines, and Multilayer Perceptron classification algorithms
 (using Python) on the gender prediction dataset with standard train/test split ratio and answer the following
 questions.
-1. How many instances are incorrectly classified?
-i) 0
-ii) 6
-iii) 10
-2. Rerun the experiment using train/test split ratio of 80/20. Do you see any change in the results?
-Explain.
-i) No,because there are some input atributes which are heavily impacting the output.
-ii) Yes,3 instances are wrong now.
-iii) Yes, 3 instances are wrong now
-3. Name 2 attributes that you believe are the most “powerful” in the prediction task. Explain why?
-   In my opinion, beard and hair, as a female can't have beard or be bald.
-4. Try to exclude these 2 attribute(s) from the dataset. Rerun the experiment (using 80/20 train/test split),
-did you find any change in the results? Explain.
-i) No, because there might be other powerful attributes than excluded ones, or that there is a lot of data with not much vareity.
-ii) No, because there might be other powerful attributes than excluded ones, or that there is a lot of data with not much vareity.
-iii) Yes, 6 instances are wrong now.
+
+1) Standard Train/Test Split
+92% accuracy: So 3 instances were incorrectly classified using the Random Forest algorithm.
+74% accuracy: So 7 instances were incorrectly classified using the Support Vector Machine
+algorithm.
+55% accuracy: So 11 instances were incorrectly classified using the Multilayer Perceptron
+Classifier.
+2) 80/20 Train Test Split
+100 % accuracy: So 0 instances were incorrectly classified using the Random Forest
+algorithm.
+81 % accuracy: So 5 instances were incorrectly classified using the Support Vector Machine
+algorithm.
+93% accuracy: So 2 instances were incorrectly classified using the Multilayer Perceptron
+Classifier.
+• In 80/20 split the accuracy of the model increases, which can be seen that less number of
+instances were classified incorrectly.
+3) Scarf and Beard are the most powerful attributes in the Prediction task because they have
+distinct values for males and females in almost most of the instances.
+4) By removing the above two attributes the accuracy of the system is reduced. Like by applying
+specified classifier algorithms the accuracy compared to previous decreases.
+
 
 Quesion 03:
 Apply Decision Tree Classifier classification algorithm (using Python) on the gender prediction dataset
@@ -32,17 +37,33 @@ strategies.
 Note: You are free to choose any parameter values for both cross-validation strategies, however, you have to
 provide these values in your submission document.
 
+Monte Carlo cross-validation:
+F1 Score: 0.94 Parameters: ShuffleSplit(train_size=0.66, test_size=0.34, n_splits = 5)
+Leave P-Out cross-validation:
+F1 Score: 0.96 Parameters: p=5 
+
 
 Question 04: Add 5 sample instances into the dataset (you can ask your friends/relatives/sibling for the data). Rerun
 the ML experiment (using Python) by training the model using Gaussian Naïve Bayes classification algorithm
 and all the instances from the gender prediction dataset. Evaluate the trained model using the newly added test
 instances. Report accuracy, precision, and recall scores.
-Note: You have to add the test instances in your assignment submission document.
-Data:- new_input = [(65, 120, 0, 3, 36, 1, 0), (68, 180, 1, 0, 40, 1, 2), (72, 180, 1, 2, 44, 0, 1), (67, 170, 0, 0, 40, 1, 1),(70, 176, 0, 3, 44, 1, 1)]
-       new_output = ['female','male','male','female','female']
-Accuracy: 80%
-Precision:  0   75%
-            1   100%
-Recall:     0   1
-            1   0.5
 
+5 instances for testing are:
+I create another .csv file named as gender-prediction-test, and add the below 5 instances
+for testing in that file. After applying the accuracy was 80%
+1. height: 63, Beard: no, weight: 150, hair length: medium, shoe size: 41, scarf: yes, eye
+color: blue, gender: female
+2. height: 81, Beard: no, weight: 182, hair length: Short, shoe size: 38, scarf: NO, eye
+color: brown, gender: female
+3. height: 76, Beard: Yes, weight: 170, hair length: Long, shoe size: 37, scarf: NO, eye
+color: brown, gender: Male
+4. height: 85, Beard: Yes, weight: 200, hair length: Bald, shoe size: 44, scarf: NO, eye
+color: Grey, gender: Male
+5. . height: 79, Beard: NO, weight: 119, hair length: Short, shoe size: 40, scarf: NO, eye
+color: black, gender: Male
+precision recall f1-score support
+0 1.00 0.50 0.67 2
+1 0.75 1.00 0.86 3
+accuracy 0.80 5
+macro avg 0.88 0.75 0.76 5
+weighted avg 0.85 0.80 0.78 5
